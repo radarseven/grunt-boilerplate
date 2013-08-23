@@ -1,0 +1,150 @@
+// ---------------------------------------------------------------------------------
+// Core Typography
+// ---------------------------------------------------------------------------------
+
+// Kern
+@mixin kern {
+	text-rendering: optimizelegibility;
+}
+
+// Smooth
+@mixin smooth {
+	 -webkit-font-smoothing: antialiased;
+}
+
+// Headings
+// -------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	@include kern;
+	color: $black;
+	font-weight: 600;
+	line-height: $baseLineHeight;
+	margin: ($baseLineHeight / 2) 0;
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga", "dlig";
+	-webkit-font-feature-settings: "liga", "dlig";
+	-o-font-feature-settings: "liga", "dlig";
+	font-feature-settings: "liga", "dlig";
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	a {
+		@include transition(all 0.2s ease-in-out);
+	}
+
+	.ampersand {
+		font-weight: 400;
+	}
+}
+
+h1 {
+	$size: 32;
+	font-size: em($size);
+	line-height: em($size + 3, $size);
+}
+
+h2 {
+	$size: 28;
+	font-size: em($size);
+	line-height: em($size + 3, $size);
+}
+
+h3 {
+	$size: 22;
+	font-size: em($size);
+	line-height: em($size + 3, $size);
+}
+
+h4 {
+	$size: 20;
+	font-size: em($size);
+	line-height: em($size + 3, $size);
+}
+
+h5 {
+	$size: 16;
+	font-size: em($size);
+	line-height: em($size + 6, $size);
+}
+
+h6 {
+	$size: 14;
+	font-size: em($size);
+	line-height: em($size + 6, $size);
+}
+
+// Body Text
+// -------------------------
+p, ul, ol {
+	margin: 0 0 ($baseLineHeight / 1.25) 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+ol, ul, dl {
+	padding: 0
+}
+
+ul, ol {
+	list-style-position: inside;
+}
+
+ul {
+	list-style-type: none;
+}
+
+dl {
+	margin: 0 0 ($baseLineHeight / 1.25) 0;
+	padding: 0;
+
+	dd {
+		margin: 0;
+	}
+}
+
+
+hgroup {
+	margin: ($baseLineHeight / 2) 0;
+
+	// Remove margin for grouped header tags
+	h1, h2, h3, h4, h5, h6
+	{
+		margin: 0;
+		padding: 0;
+	}
+}
+
+blockquote {
+	margin-left: 0;
+	padding-left: 20px;
+	position: relative;
+	border-left: 4px solid darken($grayDark, 20);
+
+	p {
+		font-size: em(19);
+		line-height: em(29, 19);
+		color: lighten($grayDark, 15);
+	}
+}
+
+p + h1, p + h2, p + h3, p + h4, p + h5, p + h6,
+ul + h1, ul + h2, ul + h3, ul + h4, ul + h5, ul + h6,
+ol + h1, ol + h2, ol + h3, ol + h4, ol + h5, ol + h6,
+blockquote + h1, blockquote + h2, blockquote + h3, blockquote + h4, blockquote + h5, blockquote + h6
+{
+	margin: $baseLineHeight 0 ($baseLineHeight / 2) 0;
+}
+
+address {
+	font-style: normal;
+}

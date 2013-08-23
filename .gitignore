@@ -1,0 +1,8 @@
+# ST2
+*.sublime*
+
+# Ignore sass-cache files.
+*.sass-cache*
+
+# Misc.
+.DS_Store

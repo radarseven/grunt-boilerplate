@@ -1,0 +1,107 @@
+// ---------------------------------------------------------------------------------
+// Colors
+// ---------------------------------------------------------------------------------
+
+// Grays
+// -----------------------------
+$grayDarker: 			#20262b;
+$grayDark: 				#3f484f;
+$gray: 					#666666;
+$grayLight: 			#dfe1e3;
+$grayLighter: 			#f1f3f5;
+
+$grayBlueDark: 			#1F2931;
+$grayBlueMid: 			#3F484F;
+$grayBlue: 				#5A636A;
+
+$black: 				#000;
+$white: 				#fff;
+
+
+// Accent colors
+// -----------------------------
+$blueDark:  			#1574c2;
+$blueDarkest: 			#01516E;
+$blue: 					#0A94D6;
+$green: 				#66D43D;
+
+// Key Colors
+// -----------------------------
+$red: 					#E04134;
+$potteryBarn: 			#cbbb97;
+$crateBarrel: 			#dddddd;
+$ikea: 					#FBE596;
+$lovesac: 				#E04134;
+
+
+// ---------------------------------------------------------------------------------
+// General Settings
+// ---------------------------------------------------------------------------------
+
+// Body
+// -------------------------
+$baseBodyColor:			$white;
+$baseFontFamily:		"Helvetica Neue", Arial, Helvetica, sans-serif;
+
+// Links
+// -------------------------
+$baseLinkColor:			$blue;
+$baseLinkColorHover:	shade($blueDark, 15);
+
+// ---------------------------------------------------------------------------------
+// Sizing
+// ---------------------------------------------------------------------------------
+
+$coreFontSize: 			24;
+$baseFontSize:			em($coreFontSize); // px to em converter --> http://bourbon.io/docs/#px-to-em
+$baseLineHeight:		em($coreFontSize + 6, $coreFontSize);
+
+// ---------------------------------------------------------------------------------
+// Form Elements
+// ---------------------------------------------------------------------------------
+
+$inputHeight:				em(25);
+$inputPadding:				$baseLineHeight / 2;
+$inputBackground:			$white;
+$inputBorder:				$gray;
+$inputDisabledBackground:	$grayDark;
+
+// ---------------------------------------------------------------------------------
+// Breakpoints
+// ---------------------------------------------------------------------------------
+
+$desktop: new-breakpoint(min-width 960px);
+$tablet: new-breakpoint(min-width 768px max-width 959px);
+// $mobile-portrait: new-breakpoint(max-width 767px);
+
+// ---------------------------------------------------------------------------------
+// BG Image Path
+// ---------------------------------------------------------------------------------
+
+$bg-img-path: 		'/assets/img/';
+
+// ---------------------------------------------------------------------------------
+// Fontsize
+// ---------------------------------------------------------------------------------
+
+@mixin font-size($fontsize, $lineheight: '6') {
+	font-size: em($fontsize);
+	line-height: em($fontsize + $lineheight, $fontsize);
+}
+
+// ---------------------------------------------------------------------------------
+// Modernizr SVG Fallback
+// Inspired by https://forrst.com/posts/Sass_Compass_Mixin_for_SVG_Background_Image_Fall-dWn
+// ---------------------------------------------------------------------------------
+@mixin no-svg { .no-svg & { @content } }
+
+@mixin svg-bkgd($filename, $pos-x: '0', $pos-y: '0', $repeat: 'no-repeat', $extension: '.png') {
+	background-image: url($bg-img-path + $filename + '.svg');
+	background-position: $pos-x $pos-y;
+	background-repeat: $repeat;
+	@include no-svg {
+		background-image: url($bg-img-path + $filename + $extension);
+		background-position: $pos-x $pos-y;
+		background-repeat: $repeat;
+	}
+}
