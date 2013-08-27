@@ -9,11 +9,11 @@ module.exports = function(grunt) {
 		// Watch JS and SCSS
 		watch: {
 			js: {
-				files: ['{% assetspath %}/js/**/*.js','!assets/js/min/**/*.js'],
+				files: ['{% js_path %}/**/*.js','!assets/js/min/**/*.js'],
 				tasks: ['jshint', 'uglify:main']
 			},
 			scss: {
-				files: '{% scsspath %}/**/*.scss',
+				files: '{% scss_path %}/**/*.scss',
 				tasks: ['sass:dev']
 			}
 		},
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 					style: 'compressed',
 				},
 				files: {
-					'{% csspath %}/main.css': '{% csspath %}/scss/main.scss', // destination : source
+					'{% css_path %}/main.css': '{% css_path %}/scss/main.scss', // destination : source
 				}
 			},
 			dev: {
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'{% csspath %}/main.css': '{% csspath %}/scss/main.scss', // destination : source
+					'{% css_path %}/main.css': '{% css_path %}/scss/main.scss', // destination : source
 				}
 			}
 		},
@@ -44,14 +44,14 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc',
 				"force": true,
 				ignores: [
-					'{% jspath %}/min/**/*.js',
-					'{% jspath %}/map/**/*.js',
-					'{% jspath %}/vendor/**/*.js'
+					'{% js_path %}/min/**/*.js',
+					'{% js_path %}/map/**/*.js',
+					'{% js_path %}/vendor/**/*.js'
 				]
 			},
 			all: [
 				'Gruntfile.js',
-				'{% jspath %}/**/*.js'
+				'{% js_path %}/**/*.js'
 			]
 		},
 
@@ -59,8 +59,8 @@ module.exports = function(grunt) {
 		uglify: {
 			main: {
 				files: {
-					'{% jspath %}/min/main.min.js': [
-						'{% jspath %}/main.js'
+					'{% js_path %}/min/main.min.js': [
+						'{% js_path %}/main.js'
 					]
 				}
 			}
