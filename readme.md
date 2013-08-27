@@ -7,17 +7,28 @@
 
 ## Technical Notes
 
-First, make sure the Grunt CLI is installed.
+First, make sure the `Grunt CLI` and `grunt-init` are installed globally.
 
     `npm install -g grunt-cli`
+    `npm install -g grunt-init`
 
-Next, `cd` into your project directory and install all dependencies in package.json by running:
+Second, clone the `grunt-init` template locally:
+
+    `git clone git@github.com:radarseven/grunt-boilerplate.git ~/.grunt-init/codekitkillah`
+
+Now, `cd` into your project directory.
+
+Initialize `codekitkillah` (note `codekitkillah` could be any name you desire):
+
+    `grunt-init codekitkillah`
+
+Install all dependencies in `package.json`. (Note, you may need to run as `sudo` user):
 
     `npm install`
 
-To being watching .js and .scss file run Grunt:
+To begin watching `.js` and `.scss` files run Grunt:
 
-    `grunt`
+    `grunt watch`
 
 ## Additional Tasks
 

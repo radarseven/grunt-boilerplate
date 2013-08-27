@@ -12,7 +12,7 @@
 exports.description = 'Create a grunt-based preprocessor for your web project. And do it now!';
 
 // Template-specific notes to be displayed before question prompts.
-//exports.notes = '_Project name_ should not contain "jquery" or "js" and ' +
+expots.notes = '';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
@@ -32,7 +32,7 @@ exports.template = function(grunt, init, done) {
     // Prompt for these values.
     init.prompt('name'),
     init.prompt('title'),
-    init.prompt('description', 'Enter description here.'),
+    init.prompt('description'),
     init.prompt('version'),
     init.prompt('repository'),
     init.prompt('homepage'),
@@ -41,14 +41,13 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_name'),
     init.prompt('author_email'),
     init.prompt('author_url'),
-    init.prompt('css_path', 'Absolute path from root to CSS assets.'),
-    init.prompt('scss_path', 'Absolute path from root to SCSS assets.'),
-    init.prompt('js_path', 'Absolute path from root to JS assets.')
+    init.prompt('css_path'),
+    init.prompt('scss_path'),
+    init.prompt('js_path')
   ], function(err, props) {
     // A few additional properties.
     props.gruntfile = 'Gruntfile.js';
     props.jsintrc   = '.jsintrc';
-    props.css
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
@@ -74,13 +73,6 @@ exports.template = function(grunt, init, done) {
         'matchdep': '~0.1.2'
       },
     });
-
-    // Generate jquery.json file.
-    // init.writePackageJSON(props.jqueryjson, props, function(pkg, props) {
-    //   // The jQuery site needs the "bugs" value as a string.
-    //   if ('bugs' in props) { pkg.bugs = props.bugs; }
-    //   return pkg;
-    // });
 
     // All done!
     done();
