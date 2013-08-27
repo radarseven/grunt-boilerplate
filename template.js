@@ -12,7 +12,7 @@
 exports.description = 'Create a grunt-based preprocessor for your web project. And do it now!';
 
 // Template-specific notes to be displayed before question prompts.
-expots.notes = '';
+exports.notes = '';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
