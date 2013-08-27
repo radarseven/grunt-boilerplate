@@ -40,9 +40,9 @@ exports.template = function(grunt, init, done) {
     init.prompt('licenses', 'MIT'),
     init.prompt('author_name'),
     init.prompt('author_email'),
-    init.prompt('author_url')
-    init.prompt('css_path', 'Absolute path from root to CSS assets.')
-    init.prompt('scss_path', 'Absolute path from root to SCSS assets.')
+    init.prompt('author_url'),
+    init.prompt('css_path', 'Absolute path from root to CSS assets.'),
+    init.prompt('scss_path', 'Absolute path from root to SCSS assets.'),
     init.prompt('js_path', 'Absolute path from root to JS assets.')
   ], function(err, props) {
     // A few additional properties.
