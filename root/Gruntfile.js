@@ -9,11 +9,11 @@ module.exports = function(grunt) {
 		// Watch JS and SCSS
 		watch: {
 			js: {
-				files: ['<%= pkg.js_path %>/**/*.js','!assets/js/min/**/*.js'],
+				files: ['{%= js_path %}/**/*.js','!assets/js/min/**/*.js'],
 				tasks: ['jshint', 'uglify:main']
 			},
 			scss: {
-				files: '<%= pkg.scss_path %>/**/*.scss',
+				files: '{%= scss_path %}/**/*.scss',
 				tasks: ['sass:dev']
 			}
 		},
