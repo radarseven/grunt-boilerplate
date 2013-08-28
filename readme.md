@@ -47,6 +47,8 @@ This will optimize all images in `/assets/img/` and save them to `/assets/img/mi
 ## Reference
 
 - [Grunt](http://gruntjs.com/)
+- [grunt-init](http://gruntjs.com/project-scaffolding)
+- [grunt-init-query](https://github.com/gruntjs/grunt-init-jquery)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 - [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass)
 - [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
